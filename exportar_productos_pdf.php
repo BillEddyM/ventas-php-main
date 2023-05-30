@@ -1,7 +1,7 @@
 <?php
 include_once "funciones.php";
 
-require_once('C:\xampp\htdocs\ventas-php-main\tcpdf.php');
+require_once('C:\xampp\htdocs\ventas-php-main\TCPDF\tcpdf.php');
 
 // Crear un nuevo documento PDF
 // Crear un nuevo documento PDF
