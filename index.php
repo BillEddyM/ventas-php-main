@@ -5,10 +5,10 @@ include_once "funciones.php";
 session_start();
 if(empty($_SESSION['usuario'])) header("location: login.php");
 $cartas = [
-    ["titulo" => "Total ventas", "icono" => "fa fa-money-bill", "total" => "$".obtenerTotalVentas(), "color" => "#A71D45"],
-    ["titulo" => "Ventas hoy", "icono" => "fa fa-calendar-day", "total" => "$".obtenerTotalVentasHoy(), "color" => "#2A8D22"],
-    ["titulo" => "Ventas semana", "icono" => "fa fa-calendar-week", "total" => "$".obtenerTotalVentasSemana(), "color" => "#223D8D"],
-    ["titulo" => "Ventas mes", "icono" => "fa fa-calendar-alt", "total" => "$".obtenerTotalVentasMes(), "color" => "#D55929"],
+    ["titulo" => "Total ventas", "icono" => "fa fa-money-bill", "total" => "Q.".obtenerTotalVentas(), "color" => "#A71D45"],
+    ["titulo" => "Ventas hoy", "icono" => "fa fa-calendar-day", "total" => "Q.".obtenerTotalVentasHoy(), "color" => "#2A8D22"],
+    ["titulo" => "Ventas semana", "icono" => "fa fa-calendar-week", "total" => "Q.".obtenerTotalVentasSemana(), "color" => "#223D8D"],
+    ["titulo" => "Ventas mes", "icono" => "fa fa-calendar-alt", "total" => "Q.".obtenerTotalVentasMes(), "color" => "#D55929"],
 ];
 
 $totales = [
@@ -67,7 +67,7 @@ $productosMasVendidos = obtenerProductosMasVendidos();
 								<tr>
 									<td><?= $usuario->usuario?></td>
 									<td><?= $usuario->numeroVentas?></td>
-									<td>$<?= $usuario->total?></td>
+									<td>Q.<?= $usuario->total?></td>
 								</tr>
 							<?php }?>
 						</tbody>
@@ -92,7 +92,7 @@ $productosMasVendidos = obtenerProductosMasVendidos();
 								<tr>
 									<td><?= $cliente->cliente?></td>
 									<td><?= $cliente->numeroCompras?></td>
-									<td>$<?= $cliente->total?></td>
+									<td>Q.<?= $cliente->total?></td>
 								</tr>
 							<?php }?>
 						</tbody>
@@ -116,7 +116,7 @@ $productosMasVendidos = obtenerProductosMasVendidos();
 	 		<tr>
 	 			<td><?= $producto->nombre?></td>
 	 			<td><?= $producto->unidades?></td>
-	 			<td>$<?= $producto->total?></td>
+	 			<td>Q.<?= $producto->total?></td>
 	 		</tr>
 	 		<?php }?>
 	 	</tbody>

@@ -41,7 +41,7 @@
         <li class="nav-item">
             <a class="nav-link active" href="reporte_ventas.php">
             <i class="fa fa-file-alt"></i> 
-            Reporte ventas
+            Informe ventas
             </a>
         </li>
         </ul>

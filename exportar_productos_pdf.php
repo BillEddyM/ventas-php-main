@@ -1,7 +1,7 @@
 <?php
 include_once "funciones.php";
 
-require_once('C:\xampp\htdocs\ventas-php-main\TCPDF\tcpdf.php');
+require_once('C:\xampp\htdocs\comercial-los-riscos\TCPDF\tcpdf.php');
 
 // Crear un nuevo documento PDF
 // Crear un nuevo documento PDF
@@ -89,9 +89,9 @@ foreach($productos as $producto){
                 <td>'. $producto->nombre .'</td>
                 <td>'. $producto->marca .'</td>
                 <td>'. $producto->talla .'</td>
-                <td>'. '$'.$producto->compra .'</td>
-                <td>'. '$'.$producto->venta .'</td>
-                <td>'. '$'. floatval($producto->venta - $producto->compra) .'</td>
+                <td>'. 'Q'.$producto->compra .'</td>
+                <td>'. 'Q'.$producto->venta .'</td>
+                <td>'. 'Q'. floatval($producto->venta - $producto->compra) .'</td>
                 <td>'. $producto->existencia .'</td>
               </tr>';
 }

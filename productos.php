@@ -13,8 +13,8 @@ $productos = obtenerProductos($nombreProducto);
 $cartas = [
     ["titulo" => "No. Productos", "icono" => "fa fa-box", "total" => count($productos), "color" => "#3578FE"],
     ["titulo" => "Total productos", "icono" => "fa fa-shopping-cart", "total" => obtenerNumeroProductos(), "color" => "#4F7DAF"],
-    ["titulo" => "Total inventario", "icono" => "fa fa-money-bill", "total" => "$". obtenerTotalInventario(), "color" => "#1FB824"],
-    ["titulo" => "Ganancia", "icono" => "fa fa-wallet", "total" => "$". calcularGananciaProductos(), "color" => "#D55929"],
+    ["titulo" => "Total inventario", "icono" => "fa fa-money-bill", "total" => "Q.". obtenerTotalInventario(), "color" => "#1FB824"],
+    ["titulo" => "Ganancia", "icono" => "fa fa-wallet", "total" => "Q.". calcularGananciaProductos(), "color" => "#D55929"],
 ];
 ?>
 <div class="container mt-3">
@@ -32,11 +32,18 @@ $cartas = [
     <?php include_once "cartas_totales.php"; ?>
 
     <form action="" method="post" class="input-group mb-3 mt-3">
-        <input autofocus name="nombreProducto" type="text" class="form-control" placeholder="Escribe el nombre o código del producto que deseas buscar" aria-label="Nombre producto" aria-describedby="button-addon2">
-        <button type="submit" name="buscarProducto" class="btn btn-primary" id="button-addon2">
-            <i class="fa fa-search"></i>
-            Buscar
-        </button>
+        <input autofocus name="nombreProducto" type="text" class="form-control mr-3" placeholder="Escribe el nombre o código del producto que deseas buscar" aria-label="Nombre producto" aria-describedby="button-addon2">
+        <div class="button-container">
+    <button type="submit" name="buscarProducto" class="ml-3 btn btn-primary" id="button-addon2">
+        <i class="fa fa-search"></i>
+        Buscar
+    </button>
+    <a class="mr-3 btn btn-secondary btn-lg" href="exportar_productos_pdf.php">
+        <i class="fa fa-file-pdf"></i>
+        Exportar PDF
+    </a>
+</div>
+
     </form>
     <table class="table">
         <thead>
@@ -58,9 +65,9 @@ $cartas = [
                 <tr>
                     <td><?= $producto->codigo; ?></td>
                     <td><?= $producto->nombre; ?></td>
-                    <td><?= '$'.$producto->compra; ?></td>
-                    <td><?= '$'.$producto->venta; ?></td>
-                    <td><?= '$'. floatval($producto->venta - $producto->compra); ?></td>
+                    <td><?= 'Q'.$producto->compra; ?></td>
+                    <td><?= 'Q'.$producto->venta; ?></td>
+                    <td><?= 'Q'. floatval($producto->venta - $producto->compra); ?></td>
                     <td><?= $producto->existencia; ?></td>
                     <td>
                         <a class="btn btn-info" href="editar_producto.php?id=<?= $producto->id; ?>">
@@ -80,8 +87,4 @@ $cartas = [
             <?php } ?>
         </tbody>
     </table>
-    <a class="btn btn-primary btn-lg" href="exportar_productos_pdf.php">
-            <i class="fa fa-file-pdf"></i>
-            Exportar PDF
-        </a>
 </div>

@@ -115,11 +115,6 @@ function obtenerNumeroClientes()
     return select($sentencia)[0]->total;
 }
 
-function obtenerVentasExportar()
-{
-    $sentencia = "SELECT * FROM ventas";
-    return select($sentencia);
-}
 
 function obtenerVentasPorUsuario()
 {
@@ -133,7 +128,7 @@ function obtenerVentasPorUsuario()
 
 function obtenerVentasPorCliente()
 {
-    $sentencia = "SELECT SUM(ventas.total) AS total, IFNULL(clientes.nombre, 'MOSTRADOR') AS cliente,
+    $sentencia = "SELECT SUM(ventas.total) AS total, IFNULL(clientes.nombre, 'CF') AS cliente,
     COUNT(*) AS numeroCompras
     FROM ventas
     LEFT JOIN clientes ON clientes.id = ventas.idCliente
@@ -419,10 +414,10 @@ function eliminarProducto($id)
     return eliminar($sentencia, $id);
 }
 
-function editarProducto($codigo, $nombre, $compra, $venta, $existencia, $id)
+function editarProducto($codigo, $nombre, $marca, $talla, $compra, $venta, $existencia, $id)
 {
-    $sentencia = "UPDATE productos SET codigo = ?, nombre = ?, compra = ?, venta = ?, existencia = ? WHERE id = ?";
-    $parametros = [$codigo, $nombre, $compra, $venta, $existencia, $id];
+    $sentencia = "UPDATE productos SET codigo = ?, nombre = ?, marca = ?, talla = ?, compra = ?, venta = ?, existencia = ? WHERE id = ?";
+    $parametros = [$codigo, $nombre, $marca, $talla, $compra, $venta, $existencia, $id];
     return editar($sentencia, $parametros);
 }
 
@@ -430,17 +425,6 @@ function obtenerProductoPorId($id)
 {
     $sentencia = "SELECT * FROM productos WHERE id = ?";
     return select($sentencia, [$id])[0];
-}
-
-function obtenerProductosPorIds($busqueda)
-{
-    $parametros = [];
-    $sentencia = "SELECT * FROM productos ";
-    if (isset($busqueda)) {
-        $sentencia .= " WHERE id = ?";
-        array_push($parametros, "%" . $busqueda . "%", "%" . $busqueda . "%");
-    }
-    return select($sentencia, $parametros);
 }
 
 function obtenerProductos($busqueda = null)
@@ -454,10 +438,10 @@ function obtenerProductos($busqueda = null)
     return select($sentencia, $parametros);
 }
 
-function registrarProducto($codigo, $nombre, $compra, $venta, $existencia)
+function registrarProducto($codigo, $nombre, $marca, $talla, $compra, $venta, $existencia)
 {
-    $sentencia = "INSERT INTO productos(codigo, nombre, compra, venta, existencia) VALUES (?,?,?,?,?)";
-    $parametros = [$codigo, $nombre, $compra, $venta, $existencia];
+    $sentencia = "INSERT INTO productos(codigo, nombre, marca, talla, compra, venta, existencia) VALUES (?,?,?,?,?,?,?)";
+    $parametros = [$codigo, $nombre, $marca, $talla, $compra, $venta, $existencia];
     return insertar($sentencia, $parametros);
 }
 
