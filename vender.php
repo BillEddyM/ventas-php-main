@@ -36,9 +36,9 @@ $clienteSeleccionado = (isset($_SESSION['clienteVenta'])) ? obtenerClientePorId(
                     <tr>
                         <td><?php echo $lista->codigo;?></td>
                         <td><?php echo $lista->nombre;?></td>
-                        <td>$<?php echo $lista->venta;?></td>
+                        <td>Q<?php echo $lista->venta;?></td>
                         <td><?php echo $lista->cantidad;?></td>
-                        <td>$<?php echo floatval($lista->cantidad * $lista->venta);?></td>
+                        <td>Q<?php echo floatval($lista->cantidad * $lista->venta);?></td>
                         <td>
                             <a href="quitar_producto_venta.php?id=<?php echo $lista->id?>" class="btn btn-danger">
                                 <i class="fa fa-times"></i>

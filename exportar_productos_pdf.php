@@ -102,4 +102,4 @@ $html .= '</tbody></table>';
 $pdf->writeHTML($html, true, false, true, false, '');
 
 // Salida del PDF
-$pdf->Output('Lista_de_Productos.pdf', 'I');
+$pdf->Output('Lista_de_Productos.pdf', 'D');
