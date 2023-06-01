@@ -476,10 +476,10 @@ function editar($sentencia, $parametros)
 
 function conectarBaseDatos()
 {
-    $host = "localhost";
-    $db   = "ventas_php";
-    $user = "root";
-    $pass = "";
+    $host = "us-cdbr-east-06.cleardb.net";
+    $db   = "heroku_0480c0145760af2";
+    $user = "b04624d17add50";
+    $pass = "71883eac ";
     $charset = 'utf8mb4';
 
     $options = [
@@ -495,3 +495,7 @@ function conectarBaseDatos()
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
 }
+
+b04624d17add50:
+71883eac@
+us-cdbr-east-06.cleardb.net/heroku_0480c0145760af2?reconnect=true
