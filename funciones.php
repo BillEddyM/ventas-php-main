@@ -496,6 +496,3 @@ function conectarBaseDatos()
     }
 }
 
-b04624d17add50:
-71883eac@
-us-cdbr-east-06.cleardb.net/heroku_0480c0145760af2?reconnect=true
