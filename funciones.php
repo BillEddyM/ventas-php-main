@@ -479,7 +479,7 @@ function conectarBaseDatos()
     $host = "us-cdbr-east-06.cleardb.net";
     $db   = "heroku_0480c0145760af2";
     $user = "b04624d17add50";
-    $pass = "71883eac ";
+    $pass = "71883eac";
     $charset = 'utf8mb4';
 
     $options = [
