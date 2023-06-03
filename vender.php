@@ -77,7 +77,7 @@ $clienteSeleccionado = (isset($_SESSION['clienteVenta'])) ? obtenerClientePorId(
 
 
         <div class="text-center mt-3">
-            <h1>Total: $<?php echo $total;?></h1>
+            <h1>Total: Q<?php echo $total;?></h1>
             <a  class="btn btn-primary btn-lg" href="registrar_venta.php">  
                 <i class="fa fa-check"></i> 
                 Terminar venta 
